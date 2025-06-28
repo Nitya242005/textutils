@@ -69,23 +69,23 @@ return (
 <div className="container" style={{color:props.mode==='dark'?'white':'#042743'}}>
 <h1>{props.heading}</h1>
 <div className="mb-3 my-3">
-<textarea className="form-control" id="myBox" rows="8" value={text} onChange={handleOnChange} style={{backgroundColor:props.mode==='dark'?'grey':'white',color:props.mode==='dark'?'white':'#042743'}}></textarea>
+<textarea className="form-control" id="myBox" rows="8" value={text} onChange={handleOnChange} style={{backgroundColor:props.mode==='dark'?'#13466e':'white',color:props.mode==='dark'?'white':'#042743'}}></textarea>
 </div>
 <button className="btn btn-primary" onClick={handleUpClick}>Convert to UpperCase</button>
-<button className="btn btn-warning mx-3" onClick={handleLoClick}>Convert to LowerCase</button>
-<button className="btn btn-success mx-3" onClick={handleCapitalize}>Capitalize</button>
-<button className="btn btn-dark mx-3" onClick={handleClear}>Clear</button>
-<button className="btn btn-danger mx-3" onClick={handleCopyClick}>Copy to ClipBoard</button>
-<button className="btn btn-info mx-3" onClick={readAloud}>Text to Speech</button>
-<button className="btn btn-secondary mx-3" onClick={handleSpeechToText}>🎙️ Voice Input</button>
+<button className="btn btn-warning mx-3 my-1" onClick={handleLoClick}>Convert to LowerCase</button>
+<button className="btn btn-success mx-3 my-1" onClick={handleCapitalize}>Capitalize</button>
+<button className="btn btn-dark mx-3 my-1" onClick={handleClear}>Clear</button>
+<button className="btn btn-danger mx-3 my-1" onClick={handleCopyClick}>Copy to ClipBoard</button>
+<button className="btn btn-info mx-3 my-1" onClick={readAloud}>Text to Speech</button>
+<button className="btn btn-secondary mx-3 my-1" onClick={handleSpeechToText}>🎙️ Voice Input</button>
 
 
 
 </div>
 <div className="container my-3"  style={{color:props.mode==='dark'?'white':'black'}}>
     <h2>Your Text Summary</h2>
-    <p>{text.split(" ").length} words and {text.length} characters</p>
-    <p>{0.008*text.split(" ").length} minutes read</p>
+    <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.length} characters</p>
+    <p>{0.008*text.split(" ").filter((element)=>{return element.length!==0}).length}minutes read</p>
 </div>
 
 </>
